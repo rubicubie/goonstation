@@ -590,5 +590,8 @@ ABSTRACT_TYPE(/datum/speech_module/modifier/accent/word_replacement)
 /datum/speech_module/modifier/accent/zalgo/proc/random_zalgo(string)
 	return global.zalgoify(string, rand(0, 2), rand(0, 1), rand(0, 2))
 
+/datum/speech_module/modifier/accent/yesman
+	id = SPEECH_MODIFIER_ACCENT_YESMAN
+	accent_proc = CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(yesman))
 
 #undef SRC_PROC

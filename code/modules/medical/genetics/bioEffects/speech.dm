@@ -705,3 +705,14 @@
 	msgLose = "Bingus my beloved :("
 	occur_in_genepools = FALSE
 	probability = 0 // Should not be player accessible
+
+/datum/bioEffect/speech/yesman
+	name = "Frontal Gyrus Alteration Type-YS"
+	desc = "Changes the brain's critical thinking to agree with everything."
+	id = "accent_yes"
+	effectType = EFFECT_TYPE_DISABILITY
+	isBad = TRUE
+	msgGain = "You feel overly agreeable."
+	msgLose = "You feel able to say no again."
+	occur_in_genepools = TRUE
+	probability = 15

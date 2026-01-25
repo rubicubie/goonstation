@@ -2642,3 +2642,49 @@ proc/frogify(var/string)
 		string += pick(" ribbit", " croak", " brp", " weh", " burup")
 
 	return string
+
+/proc/yesman(var/string)
+	var/yesman = list(
+		@{"\bNo\b"} = "Yes",
+		@{"\bNay\b"} = "Aye",
+		@{"\bNah\b"} = "Yea",
+
+		@{"\bwont\b"} = "will",
+		@{"\bnot\b"} = "",
+		@{"\brefuse\b"} = "accept",
+		@{"can't\b|cant\b"} = "can",
+		@{"\bdidn't\b|\bdidnt\b"} = "did",
+
+		@{"\bdumbass\b"} = "smartass",
+		@{"\bdipshit\b"} = "great person",
+		@{"\bstupid\b"} = "smart",
+		@{"\bbad\b"} = "good",
+		@{"\bawful\b"} = "amazing",
+		@{"\bterrible\b"} = "wonderful",
+		@{"\bhate\b"} = "love",
+		@{"\bdespite\b"} = "like",
+		@{"\bworst\b"} = "best",
+		@{"\basshole\b"} = "friend",
+		@{"\bweird\b"} = "cool",
+
+		@{"\bcrime\b"} = "hangout",
+		@{"\bkill\b"} = "hug",
+		@{"\bkilling\b"} = "hugging",
+		@{"\bmurdered\b"} = "became friends with",
+		@{"\bmurderer\b"} = "extrovert",
+		@{"\bmurder\b"} = "friendship",
+
+		@{"\bmutadone\b"} = "mutagen",
+
+		@{"\bFuck [yes|yeah|yea]\b"} = "Heck yeah",
+		@{"\bOh shit\b"} = "Oopsie daisy",
+		@{"\bfuck\b"} = pick("fudge", "shoot", "frick", "freak", "crap"),
+		@{"\bshit\b"} = pick("poopsie", "doo-doo", "poo", "crap", "darn"),
+		@{"\bdamn\b"} = "dang",
+		@{"\bfucking\b"} = "danging",
+		@{"ass\b"} = "bum",
+
+	)
+	for (var/pattern in yesman)
+		string = replacetext(string, regex(pattern, "i"), yesman[pattern])
+	return string
