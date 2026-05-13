@@ -2644,47 +2644,30 @@ proc/frogify(var/string)
 	return string
 
 /proc/yesman(var/string)
-	var/yesman = list(
-		@{"\bNo\b"} = "Yes",
-		@{"\bNay\b"} = "Aye",
-		@{"\bNah\b"} = "Yea",
 
-		@{"\bwont\b"} = "will",
-		@{"\bnot\b"} = "",
-		@{"\brefuse\b"} = "accept",
-		@{"can't\b|cant\b"} = "can",
-		@{"\bdidn't\b|\bdidnt\b"} = "did",
+	//var/list/yes_list = list(
+	//	@{"\bdipshit\b"} = "great person",
+	//	@{"\bFuck [yes|yeah|yea]\b"} = "Heck yeah",
+	//	@{"\bOh shit\b"} = "Oopsie daisy",
+	//	@{"\bshit\b"} = pick("poopsie", "doo-doo", "poo", "crap", "darn", "poo poo")
+	//)
 
-		@{"\bdumbass\b"} = "smartass",
-		@{"\bdipshit\b"} = "great person",
-		@{"\bstupid\b"} = "smart",
-		@{"\bbad\b"} = "good",
-		@{"\bawful\b"} = "amazing",
-		@{"\bterrible\b"} = "wonderful",
-		@{"\bhate\b"} = "love",
-		@{"\bdespite\b"} = "like",
-		@{"\bworst\b"} = "best",
-		@{"\basshole\b"} = "friend",
-		@{"\bweird\b"} = "cool",
+	var/list/tokens = splittext(string, regex("\\b", "i"))
+	var/list/modded_tokens = list()
+	//for (var/pattern in yes_list())
+		//string = replacetext(string, regex(pattern, "i"), yes_list[pattern])
+	//return string
 
-		@{"\bcrime\b"} = "hangout",
-		@{"\bkill\b"} = "hug",
-		@{"\bkilling\b"} = "hugging",
-		@{"\bmurdered\b"} = "became friends with",
-		@{"\bmurderer\b"} = "extrovert",
-		@{"\bmurder\b"} = "friendship",
 
-		@{"\bmutadone\b"} = "mutagen",
+	// self reminder that "didn't" or "can't" doesn't work
+	// and removal of words (not, nope)
 
-		@{"\bFuck [yes|yeah|yea]\b"} = "Heck yeah",
-		@{"\bOh shit\b"} = "Oopsie daisy",
-		@{"\bfuck\b"} = pick("fudge", "shoot", "frick", "freak", "crap"),
-		@{"\bshit\b"} = pick("poopsie", "doo-doo", "poo", "crap", "darn"),
-		@{"\bdamn\b"} = "dang",
-		@{"\bfucking\b"} = "danging",
-		@{"ass\b"} = "bum",
+	for (var/token in tokens)
+		var/processed = FALSE
+		var/maybe_replacement = strings("language/yesman.txt", lowertext(token), 1)
+		if (maybe_replacement)
+			token = replacetext(token, lowertext(token), maybe_replacement)
+			processed = TRUE
+		modded_tokens += token
 
-	)
-	for (var/pattern in yesman)
-		string = replacetext(string, regex(pattern, "i"), yesman[pattern])
-	return string
+	return jointext(modded_tokens, "")
