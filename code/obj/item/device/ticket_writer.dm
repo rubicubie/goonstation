@@ -95,7 +95,7 @@
 			p.name = "Official Caution - [ticket_target]"
 			p.info = ticket_text
 			p.icon_state = src.paper_icon_state
-			p.color = "#FFE9AD"
+			p.paper_color = "#FFE9AD"
 
 		return T.target_byond_key
 

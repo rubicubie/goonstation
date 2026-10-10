@@ -1171,7 +1171,7 @@ Using electronic "Detomatix" SELF-DESTRUCT program is perhaps less simple!<br>
 				p.name = "Official Caution - [ticket_target]"
 				p.info = ticket_text
 				p.icon_state = "paper_caution"
-				p.color = "#FFE9AD"
+				p.paper_color = "#FFE9AD"
 
 
 /*			for(var/datum/db_record/S as anything in data_core.security.records) //there is probably a better way of doing this too
@@ -1263,7 +1263,7 @@ Using electronic "Detomatix" SELF-DESTRUCT program is perhaps less simple!<br>
 					p.name = "Official Fine Notification - [ticket_target]"
 					p.info = ticket_text
 					p.icon_state = "paper_caution"
-					p.color = "#FFE9AD"
+					p.paper_color = "#FFE9AD"
 
 			else if(fine_amount <= SECURITY::TICKET::MAX_FINE_NO_APPROVAL)
 				message = "Fine request created, awaiting approval for a small fine."
@@ -1329,7 +1329,7 @@ Using electronic "Detomatix" SELF-DESTRUCT program is perhaps less simple!<br>
 				p.name = "Official Fine Notification - [F.target]"
 				p.info = ticket_text
 				p.icon_state = "paper_caution"
-				p.color = "#FFE9AD"
+				p.paper_color = "#FFE9AD"
 
 		else if(href_list["back"])
 			mode = 0
