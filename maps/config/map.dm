@@ -82,6 +82,9 @@
 #elif defined(MAP_OVERRIDE_PROBSTATION)
 #include "probstation.dm"
 
+#elif defined(MAP_OVERRIDE_RUBI)
+#include "event-rubi.dm"
+
 // below maps or it will always include devtest
 #elif defined(GOTTA_GO_FAST_BUT_ZLEVELS_TOO_SLOW)
 #include "gottagofast.dm"

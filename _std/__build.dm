@@ -39,15 +39,15 @@ o+`        `-` ``..-:yooos-..----------..`
 /// Skip setting up atmospheric system.
 //#define SKIP_FEA_SETUP
 /// Skip generation of mining level.
-//#define SKIP_Z5_SETUP
+#define SKIP_Z5_SETUP
 /// Skip planet generation (for Artemis).
-//#define SKIP_PLANETS_SETUP
+#define SKIP_PLANETS_SETUP
 /// Skip calculating security camera coverage.
-//#define SKIP_CAMERA_COVERAGE
+#define SKIP_CAMERA_COVERAGE
 /// Skip changelogs.
-//#define IM_TESTING_SHIT_STOP_BARFING_CHANGELOGS_AT_ME
+#define IM_TESTING_SHIT_STOP_BARFING_CHANGELOGS_AT_ME
 /// Automatically ready up and join the game ASAP.
-//#define I_DONT_WANNA_WAIT_FOR_THIS_PREGAME_SHIT_JUST_GO
+#define I_DONT_WANNA_WAIT_FOR_THIS_PREGAME_SHIT_JUST_GO
 
 // #endregion
 // #region --------- Convenience Options ---------
@@ -96,17 +96,17 @@ o+`        `-` ``..-:yooos-..----------..`
 /// Don't prebake clones.
 //#define CLONING_IS_A_SIN
 /// Clonepods fully heal the clone instantly.
-//#define CLONING_IS_INSTANT
+#define CLONING_IS_INSTANT
 /// Deletes turrets.
 //#define LOW_SECURITY
 /// Deletes mob critters.
 //#define NO_CRITTERS
 /// Don't generate random rooms. Random room areas will be left blank and the landmark will be visible.
-//#define NO_RANDOM_ROOMS
+#define NO_RANDOM_ROOMS
 /// Don't spawn random events.
 //#define NO_RANDOM_EVENTS
 /// Don't autocall the shuttle.
-//#define NO_SHUTTLE_CALLS
+#define NO_SHUTTLE_CALLS
 /// Lets you varedit things you normally couldn't (admin holders, server config).
 //#define I_AM_HACKERMAN
 /// Enables checking for some additional errors which might be too costly on live server. Also implied by CI_RUNTIME_CHECKING in CI.
@@ -114,13 +114,13 @@ o+`        `-` ``..-:yooos-..----------..`
 /// Enables deleting mobs with build mode right click on obj place mode.
 //#define QUICK_MOB_DELETION
 /// Disables PDA messages from the wage system.
-//#define SHUT_UP_ABOUT_MY_PAY
+#define SHUT_UP_ABOUT_MY_PAY
 /// Disables random crew mail system.
-//#define FUCK_OFF_WITH_THE_MAIL
+#define FUCK_OFF_WITH_THE_MAIL
 /// Prevents ghostdrone factory objs from doing stuff.
 //#define GHOSTDRONES_ON_STRIKE
 /// Stops lights from breaking or burning out when spawning or turning on/off.
-//#define STOP_BREAKING_THE_FUCKING_LIGHTS_I_WANT_TO_SEE_SHIT
+#define STOP_BREAKING_THE_FUCKING_LIGHTS_I_WANT_TO_SEE_SHIT
 /// Stops antag popups from coming up at the start of every game.
 //#define NO_ANTAG_POPUPS_I_DONT_CARE
 
@@ -208,6 +208,7 @@ o+`        `-` ``..-:yooos-..----------..`
 //#define MAP_OVERRIDE_MUSHROOM     // Updated Mushroom
 //#define MAP_OVERRIDE_DENSITY2     // Density2 (second smallest map), by Emily
 //#define MAP_OVERRIDE_PROBSTATION  // Randomly generated map
+#define MAP_OVERRIDE_RUBI
 
 /// Generate map screenshots for goonhub map viewer (NOT USED NORMALLY). Use together with a map override above.
 //#define GENERATE_GOONHUB_MAP
